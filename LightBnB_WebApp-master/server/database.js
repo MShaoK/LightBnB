@@ -65,7 +65,7 @@ const getAllReservations = function(guest_id, limit = 10) {
   return db.query(`
   SELECT *
   FROM reservations
-  WHERE guest_id = $1
+  WHERE guest_id = $1 AND reservations.end_date < Now()::date
   LIMIT $2
   `, [guest_id, limit])
   .then(res => res.rows[0])
