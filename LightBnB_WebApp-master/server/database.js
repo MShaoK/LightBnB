@@ -2,6 +2,8 @@ const properties = require('./json/properties.json');
 const users = require('./json/users.json');
 /// Users
 
+const db = require('../db/index.js');
+
 /**
  * Get a single user from the database given their email.
  * @param {String} email The email of the user.
